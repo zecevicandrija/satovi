@@ -1,0 +1,148 @@
+.contact {
+    padding: 150px 0;
+    background: var(--bg-light);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.contactInfo {
+    padding-top: 20px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+.contactInfo.reveal {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sectionTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.contactText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 50px;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contactItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contactLabel {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contactValue {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.contactForm {
+    background: #fafafa;
+    padding: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out 0.2s;
+}
+
+.contactForm.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 18px 25px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    background: var(--bg-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contactForm textarea {
+    resize: vertical;
+}
+
+.btnPrimary {
+    width: 100%;
+    padding: 18px 45px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .contact {
+        padding: 80px 0;
+    }
+    
+    .sectionTitle {
+        font-size: 36px;
+    }
+    
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contactForm {
+        padding: 30px 20px;
+    }
+}

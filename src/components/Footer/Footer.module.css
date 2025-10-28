@@ -1,0 +1,83 @@
+.footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 80px 0 30px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.footerBrand h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.footerBrand p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footerLinks h4,
+.footerLegal h4 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+.footerLinks ul,
+.footerLegal ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footerLinks a,
+.footerLegal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.footerLinks a:hover,
+.footerLegal a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.footerBottom {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footerBottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

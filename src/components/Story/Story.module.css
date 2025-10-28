@@ -1,0 +1,209 @@
+.story {
+    padding: 150px 0;
+    background: var(--bg-light);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.storyContent {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sectionLabel {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.sectionTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.storyText {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 60px;
+}
+
+.storyStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.statItem:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.statItem:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.statItem:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.statNumber {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.statItem:hover .statNumber {
+    color: var(--accent);
+}
+
+.statLabel {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-gray);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE ANIMATIONS ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .story {
+        padding: 80px 0;
+        overflow: hidden !important;
+    }
+    
+    .sectionTitle {
+        font-size: 36px;
+    }
+    
+    .storyStats {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Story Content - Mobile reveal animation */
+    .storyContent {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s ease-out;
+    }
+    
+    .storyContent.mobileReveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    /* Section Label - Slide from left */
+    .sectionLabel {
+        animation: mobileLabelSlide 1s ease-out forwards;
+        opacity: 0;
+    }
+    
+    @keyframes mobileLabelSlide {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    /* Section Title - Pop animation */
+    .storyContent.mobileReveal .sectionTitle {
+        animation: mobileTitlePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+        opacity: 0;
+    }
+    
+    @keyframes mobileTitlePop {
+        from {
+            opacity: 0;
+            transform: scale(0.8) translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+    
+    /* Story Text - Fade in */
+    .storyContent.mobileReveal .storyText {
+        animation: mobileFadeIn 0.8s ease-out 0.4s forwards;
+        opacity: 0;
+    }
+    
+    @keyframes mobileFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Stats - Mobile stagger animation */
+    .statItem {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.8);
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: none; /* Disable desktop animation */
+    }
+    
+    .statItem.mobileReveal {
+        opacity: 1 !important;
+        transform: translateX(0) scale(1) !important;
+    }
+    
+    .statItem:nth-child(1) { 
+        transition-delay: 0.1s;
+        animation-delay: 0s;
+    }
+    .statItem:nth-child(2) { 
+        transition-delay: 0.3s;
+        animation-delay: 0s;
+    }
+    .statItem:nth-child(3) { 
+        transition-delay: 0.5s;
+        animation-delay: 0s;
+    }
+}
