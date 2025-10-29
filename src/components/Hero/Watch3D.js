@@ -2,44 +2,29 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
-import { Suspense, useEffect, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
 function WatchModel() {
   const { scene } = useGLTF('/Assets/sat/scene.gltf')
   const primitiveRef = useRef()
-  const [debugInfo, setDebugInfo] = useState(null)
 
   useEffect(() => {
-    if (primitiveRef.current && scene) {
+    if (primitiveRef.current) {
       const box = new THREE.Box3().setFromObject(primitiveRef.current)
       const center = box.getCenter(new THREE.Vector3())
-      const size = box.getSize(new THREE.Vector3())
-      
-      setDebugInfo({
-        center: { x: center.x.toFixed(2), y: center.y.toFixed(2), z: center.z.toFixed(2) },
-        size: { x: size.x.toFixed(2), y: size.y.toFixed(2), z: size.z.toFixed(2) }
-      })
-      
-      // Primeni centriranje
       primitiveRef.current.position.set(-center.x, -center.y, -center.z)
     }
   }, [scene])
   
   return (
-    <>
-      <primitive
-        ref={primitiveRef}
-        object={scene} 
-        scale={25}
-        position={[0, -1.3, 0]}
-        rotation={[0, 0, 0]}
-      />
-      
-      {/* Debug helper - helper grid */}
-      <gridHelper args={[10, 10]} position={[0, -1.3, 0]} />
-      <axesHelper args={[2]} />
-    </>
+    <primitive
+      ref={primitiveRef}
+      object={scene} 
+      scale={25}
+      position={[0, -2.5, 0]}  // Promenio sa -1.3 na -2.5 (spušteno dole)
+      rotation={[0, 0, 0]}
+    />
   )
 }
 
