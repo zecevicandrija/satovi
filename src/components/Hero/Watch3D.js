@@ -7,29 +7,22 @@ import * as THREE from 'three'
 
 function WatchModel() {
   const { scene } = useGLTF('/Assets/sat/scene.gltf')
-  const primitiveRef = useRef()
+  const groupRef = useRef()
 
   useEffect(() => {
-    if (primitiveRef.current) {
-      const box = new THREE.Box3().setFromObject(primitiveRef.current)
+    if (groupRef.current && scene) {
+      const box = new THREE.Box3().setFromObject(scene)
       const center = box.getCenter(new THREE.Vector3())
       
-      // Kombinuj centriranje SA offsetom
-      primitiveRef.current.position.set(
-        -center.x, 
-        -center.y - 2.5,  // Dodaj offset od -2.5 NA centriranje
-        -center.z
-      )
+      // Centriraj SCENU, ne grupu
+      scene.position.set(-center.x, -center.y, -center.z)
     }
   }, [scene])
   
   return (
-    <primitive
-      ref={primitiveRef}
-      object={scene} 
-      scale={25}
-      rotation={[0, 0, 0]}
-    />
+    <group ref={groupRef} position={[0, -1.3, 0]} scale={25} rotation={[0, 0, 0]}>
+      <primitive object={scene} />
+    </group>
   )
 }
 
