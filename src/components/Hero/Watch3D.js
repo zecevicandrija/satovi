@@ -2,27 +2,18 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
-import { Suspense, useEffect, useRef } from 'react'
-import * as THREE from 'three'
+import { Suspense } from 'react'
 
 function WatchModel() {
   const { scene } = useGLTF('/Assets/sat/scene.gltf')
-  const groupRef = useRef()
-
-  useEffect(() => {
-    if (groupRef.current && scene) {
-      const box = new THREE.Box3().setFromObject(scene)
-      const center = box.getCenter(new THREE.Vector3())
-      
-      // Centriraj SCENU, ne grupu
-      scene.position.set(-center.x, -center.y, -center.z)
-    }
-  }, [scene])
   
   return (
-    <group ref={groupRef} position={[0, -1.3, 0]} scale={25} rotation={[0, 0, 0]}>
-      <primitive object={scene} />
-    </group>
+    <primitive
+      object={scene.clone()} 
+      scale={25}
+      position={[0, -1.3, 0]}
+      rotation={[0, 0, 0]}
+    />
   )
 }
 
@@ -31,7 +22,19 @@ export default function Watch3D() {
     <Canvas
       style={{ width: '100%', height: '100%' }}
       orthographic
-      camera={{ position: [0, 0, 3.5], zoom: 100, near: 0.1, far: 100 }}
+      gl={{ 
+        antialias: true,
+        alpha: true,
+        preserveDrawingBuffer: true // KRITIČNO za konzistentnost
+      }}
+      camera={{ 
+        position: [0, 0, 3.5], 
+        zoom: 100, 
+        near: 0.1, 
+        far: 100,
+        manual: false // Automatsko ažuriranje kamere
+      }}
+      dpr={1} // Fiksni pixel ratio
     >
       <ambientLight intensity={0.7} />
       <directionalLight position={[5, 5, 5]} intensity={1.5} />
@@ -69,4 +72,5 @@ export default function Watch3D() {
   )
 }
 
+// Preload
 useGLTF.preload('/Assets/sat/scene.gltf')
