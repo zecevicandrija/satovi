@@ -13,7 +13,13 @@ function WatchModel() {
     if (primitiveRef.current) {
       const box = new THREE.Box3().setFromObject(primitiveRef.current)
       const center = box.getCenter(new THREE.Vector3())
-      primitiveRef.current.position.set(-center.x, -center.y, -center.z)
+      
+      // Kombinuj centriranje SA offsetom
+      primitiveRef.current.position.set(
+        -center.x, 
+        -center.y - 2.5,  // Dodaj offset od -2.5 NA centriranje
+        -center.z
+      )
     }
   }, [scene])
   
@@ -22,7 +28,6 @@ function WatchModel() {
       ref={primitiveRef}
       object={scene} 
       scale={25}
-      position={[0, -2.5, 0]}  // Promenio sa -1.3 na -2.5 (spušteno dole)
       rotation={[0, 0, 0]}
     />
   )
