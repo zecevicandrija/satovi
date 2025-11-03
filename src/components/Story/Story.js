@@ -13,6 +13,8 @@ export default function Story() {
   const sectionRef = useRef(null)
   const contentRef = useRef(null)
   const statRefs = useRef([])
+  const imageRef = useRef(null)
+  const featuresRefs = useRef([])
 
   useEffect(() => {
     const isMobile = window.innerWidth <= 768
@@ -24,21 +26,44 @@ export default function Story() {
             setHasAnimated(true)
             animateNumbers()
             
+            // Desktop animations
+            if (!isMobile && contentRef.current) {
+              contentRef.current.classList.add(styles.reveal)
+            }
+            
             // Mobile animations
             if (isMobile && contentRef.current) {
               contentRef.current.classList.add(styles.mobileReveal)
             }
             
-            // Animate stat items on mobile
-            if (isMobile) {
-              statRefs.current.forEach((stat) => {
-                if (stat) stat.classList.add(styles.mobileReveal)
-              })
+            // Animate stat items
+            statRefs.current.forEach((stat, index) => {
+              if (stat) {
+                setTimeout(() => {
+                  stat.classList.add(isMobile ? styles.mobileReveal : styles.reveal)
+                }, index * 150)
+              }
+            })
+            
+            // Animate image
+            if (imageRef.current) {
+              setTimeout(() => {
+                imageRef.current.classList.add(isMobile ? styles.mobileReveal : styles.reveal)
+              }, 300)
             }
+            
+            // Animate features
+            featuresRefs.current.forEach((feature, index) => {
+              if (feature) {
+                setTimeout(() => {
+                  feature.classList.add(isMobile ? styles.mobileReveal : styles.reveal)
+                }, 400 + index * 200)
+              }
+            })
           }
         })
       },
-      { threshold: 0.3 }
+      { threshold: isMobile ? 0.15 : 0.3 }
     )
 
     if (sectionRef.current) {
@@ -56,13 +81,13 @@ export default function Story() {
     // Precision: 0 -> 99
     let precisionCount = 0
     const precisionInterval = setInterval(() => {
-      precisionCount += 1
+      precisionCount += 2
       if (precisionCount >= 99) {
         precisionCount = 99
         clearInterval(precisionInterval)
       }
       setCounts(prev => ({ ...prev, precision: precisionCount }))
-    }, 25)
+    }, 20)
 
     // Support: 0 -> 24
     let supportCount = 0
@@ -73,9 +98,9 @@ export default function Story() {
         clearInterval(supportInterval)
       }
       setCounts(prev => ({ ...prev, support: supportCount }))
-    }, 60)
+    }, 50)
 
-    // Warranty: 0 -> 2
+    // Warranty: 0 -> 5
     let warrantyCount = 0
     const warrantyInterval = setInterval(() => {
       warrantyCount += 1
@@ -84,48 +109,141 @@ export default function Story() {
         clearInterval(warrantyInterval)
       }
       setCounts(prev => ({ ...prev, warranty: warrantyCount }))
-    }, 600)
+    }, 300)
   }
 
   return (
-    <section className={styles.story} ref={sectionRef}>
+    <section className={styles.story} ref={sectionRef} id="story">
       <div className={styles.container}>
-        <div className={styles.storyContent} ref={contentRef}>
-          <span className={styles.sectionLabel}>Naša Priča</span>
-          <h2 className={styles.sectionTitle}>Gde se tradicija susreće sa inovacijom</h2>
-          <p className={styles.storyText}>
-            Svaki sat je remek-delo pažljivo dizajnirano da odražava vašu individualnost. 
-            Kombinujemo vanvremensku eleganciju sa modernim dizajnom, stvarajući izuzetan 
-            komad koji ćete nositi sa ponosom.
-          </p>
-          <div className={styles.storyStats}>
-            <div 
-              className={styles.statItem}
-              ref={(el) => (statRefs.current[0] = el)}
-            >
-              <span className={styles.statNumber}>
-                {counts.precision}%
-              </span>
-              <span className={styles.statLabel}>Preciznost</span>
+        {/* Main Story Content */}
+        <div className={styles.storyGrid}>
+          <div className={styles.storyContent} ref={contentRef}>
+            <span className={styles.sectionLabel}>
+              <span className={styles.labelIcon}>✦</span>
+              Naša Priča
+              <span className={styles.labelIcon}>✦</span>
+            </span>
+            <h2 className={styles.sectionTitle}>
+              Gde Tradicija Susreće
+              <span className={styles.titleHighlight}> Inovaciju</span>
+            </h2>
+            <p className={styles.storyText}>
+              Svaki sat je remek-delo pažljivo dizajnirano da odražava vašu jedinstvenu 
+              individualnost. Kombinujemo vanvremensku eleganciju sa modernom preciznošću, 
+              stvarajući izuzetan komad koji ćete nositi sa ponosom decenijama.
+            </p>
+            <p className={styles.storyTextSecondary}>
+              Od izbora najfinijih materijala do poslednjeg poteza masterov, svaki detalj 
+              je osmišljen da pruži savršenu harmoniju forme i funkcije.
+            </p>
+            
+            {/* CTA Button */}
+            <a href="#collection" className={styles.storyButton}>
+              <span>Istražite Kolekciju</span>
+              <span className={styles.buttonArrow}>→</span>
+            </a>
+          </div>
+          
+          {/* Story Image/Visual */}
+          <div className={styles.storyImage} ref={imageRef}>
+            <div className={styles.imageOverlay}>
+              <div className={styles.imageGlow}></div>
             </div>
-            <div 
-              className={styles.statItem}
-              ref={(el) => (statRefs.current[1] = el)}
-            >
-              <span className={styles.statNumber}>
-                {counts.support}/7
-              </span>
-              <span className={styles.statLabel}>Podrška</span>
+            <div className={styles.imagePlaceholder}>
+              {/* <img 
+                src="/Assets/pngsat.png" 
+                alt="Premium sat CHRONOS" 
+                className={styles.watchImage}
+              /> */}
+              {/* Ovde možeš staviti sliku sata ili grafiku */}
+              <div className={styles.watchIllustration}>
+                <div className={styles.watchFrame}></div>
+                <div className={styles.watchDetails}>
+                  <div className={styles.watchDetail}></div>
+                  <div className={styles.watchDetail}></div>
+                  <div className={styles.watchDetail}></div>
+                </div>
+              </div>
             </div>
-            <div 
-              className={styles.statItem}
-              ref={(el) => (statRefs.current[2] = el)}
-            >
-              <span className={styles.statNumber}>
-                {counts.warranty} God
-              </span>
-              <span className={styles.statLabel}>Garancija</span>
+          </div>
+        </div>
+        
+        {/* Stats Section */}
+        <div className={styles.storyStats}>
+          <div 
+            className={styles.statItem}
+            ref={(el) => (statRefs.current[0] = el)}
+          >
+            <div className={styles.statIcon}>⚡</div>
+            <span className={styles.statNumber}>
+              {counts.precision}%
+            </span>
+            <span className={styles.statLabel}>Švajcarska Preciznost</span>
+            <span className={styles.statDescription}>Mehanizam najfinijeg kvaliteta</span>
+          </div>
+          <div 
+            className={styles.statItem}
+            ref={(el) => (statRefs.current[1] = el)}
+          >
+            <div className={styles.statIcon}>🛡️</div>
+            <span className={styles.statNumber}>
+              {counts.support}/7
+            </span>
+            <span className={styles.statLabel}>Premium Podrška</span>
+            <span className={styles.statDescription}>Uvek tu za vas</span>
+          </div>
+          <div 
+            className={styles.statItem}
+            ref={(el) => (statRefs.current[2] = el)}
+          >
+            <div className={styles.statIcon}>💎</div>
+            <span className={styles.statNumber}>
+              {counts.warranty} God
+            </span>
+            <span className={styles.statLabel}>Garancija</span>
+            <span className={styles.statDescription}>Osigurana kvaliteta</span>
+          </div>
+        </div>
+        
+        {/* Premium Features */}
+        <div className={styles.premiumFeatures}>
+          <div 
+            className={styles.featureCard}
+            ref={(el) => (featuresRefs.current[0] = el)}
+          >
+            <div className={styles.featureIconWrapper}>
+              <span className={styles.featureIcon}>🔬</span>
             </div>
+            <h3 className={styles.featureTitle}>Ručna Izrada</h3>
+            <p className={styles.featureText}>
+              Svaki sat je pažljivo sklopljen od strane iskusnih majstora sa više od 200 sati rada
+            </p>
+          </div>
+          
+          <div 
+            className={styles.featureCard}
+            ref={(el) => (featuresRefs.current[1] = el)}
+          >
+            <div className={styles.featureIconWrapper}>
+              <span className={styles.featureIcon}>✨</span>
+            </div>
+            <h3 className={styles.featureTitle}>Premium Materijali</h3>
+            <p className={styles.featureText}>
+              Safirno staklo, nehrđajući čelik 316L i kožne narukvice najvišeg kvaliteta
+            </p>
+          </div>
+          
+          <div 
+            className={styles.featureCard}
+            ref={(el) => (featuresRefs.current[2] = el)}
+          >
+            <div className={styles.featureIconWrapper}>
+              <span className={styles.featureIcon}>🏆</span>
+            </div>
+            <h3 className={styles.featureTitle}>Doživotna Vrednost</h3>
+            <p className={styles.featureText}>
+              Vremenski dizajn koji zadržava vrednost i postaje deo vaše porodične tradicije
+            </p>
           </div>
         </div>
       </div>

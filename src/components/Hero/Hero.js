@@ -13,23 +13,34 @@ export default function Hero() {
     const titleLines = document.querySelectorAll(`.${styles.titleLine}`)
     const subtitle = document.querySelector(`.${styles.heroSubtitle}`)
     const buttons = document.querySelector(`.${styles.heroButtons}`)
+    const badge = document.querySelector(`.${styles.heroBadge}`)
     
+    // Animate badge first
+    if (badge) {
+      setTimeout(() => {
+        badge.classList.add(styles.animate)
+      }, 100)
+    }
+    
+    // Then title lines
     titleLines.forEach((line, index) => {
       setTimeout(() => {
         line.classList.add(styles.animate)
-      }, index * 200)
+      }, 300 + index * 200)
     })
     
+    // Subtitle
     if (subtitle) {
       setTimeout(() => {
         subtitle.classList.add(styles.animate)
-      }, 600)
+      }, 900)
     }
     
+    // Buttons
     if (buttons) {
       setTimeout(() => {
         buttons.classList.add(styles.animate)
-      }, 900)
+      }, 1200)
     }
 
     // Parallax effect for mobile watch
@@ -74,31 +85,90 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="home">
       <div className={styles.heroOverlay}></div>
+      
+      {/* Animated particles background */}
+      <div className={styles.particles}>
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className={styles.particle}></div>
+        ))}
+      </div>
+      
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
+          {/* Premium Badge */}
+          <div className={styles.heroBadge}>
+            <span className={styles.badgeIcon}>✦</span>
+            <span>Ekskluzivna Kolekcija 2025</span>
+            <span className={styles.badgeIcon}>✦</span>
+          </div>
+          
           <h1 className={styles.heroTitle}>
             <span className={styles.titleLine}>Vreme je</span>
             <span className={`${styles.titleLine} ${styles.titleMain}`}>Umetnost</span>
           </h1>
+          
           <p className={styles.heroSubtitle}>
             Otkrijte savršenu harmoniju elegancije i preciznosti
           </p>
+          
           <div className={styles.heroButtons}>
-            <a href="#collection" className={styles.btnPrimary}>Istražite Kolekciju</a>
-            <a href="#features" className={styles.btnOutline}>Saznajte Više</a>
+            <a href="#collection" className={styles.btnPrimary}>
+              <span className={styles.btnText}>Pogledaj Kolekciju</span>
+              <span className={styles.btnArrow}>→</span>
+            </a>
+            <a href="#features" className={styles.btnOutline}>
+              <span>Otkrijte Više</span>
+            </a>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className={styles.trustBadges}>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>🏆</span>
+              <span className={styles.trustText}>2 God. Garancija</span>
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>🚚</span>
+              <span className={styles.trustText}>Besplatna Dostava</span>
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>💎</span>
+              <span className={styles.trustText}>Premium Materijali</span>
+            </div>
           </div>
         </div>
+        
         <div className={styles.heroWatch}>
           <div className={styles.watchCircle}></div>
+          <div className={styles.watchCircleSecondary}></div>
           <div className={styles.watchPlaceholder}>
-            <Suspense fallback={<div className={styles.loading}>Loading...</div>}>
+            <Suspense fallback={
+              <div className={styles.loading}>
+                <div className={styles.loadingSpinner}></div>
+              </div>
+            }>
               <Watch3D />
             </Suspense>
           </div>
+          
+          {/* Floating features around watch */}
+          <div className={styles.floatingFeature} style={{ top: '10%', right: '10%' }}>
+            <div className={styles.featureDot}></div>
+            <div className={styles.featureLabel}>Safirno staklo</div>
+          </div>
+          <div className={styles.floatingFeature} style={{ bottom: '20%', right: '5%' }}>
+            <div className={styles.featureDot}></div>
+            <div className={styles.featureLabel}>Vodootporan</div>
+          </div>
+          <div className={styles.floatingFeature} style={{ top: '30%', left: '5%' }}>
+            <div className={styles.featureDot}></div>
+            <div className={styles.featureLabel}>Švajcarski mehanizam</div>
+          </div>
         </div>
       </div>
+      
       <div className={styles.scrollIndicator}>
-        <span>Skroluj</span>
+        <span>Scroll</span>
         <div className={styles.scrollLine}></div>
       </div>
     </section>
