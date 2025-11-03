@@ -69,7 +69,14 @@ export default function Navbar() {
     <>
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         {/* Progress Bar */}
-        
+        {/* <div className={styles.progressBar}>
+          <div 
+            className={styles.progressFill}
+            style={{
+              width: `${(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`
+            }}
+          ></div>
+        </div> */}
 
         <div className={styles.navContainer}>
           {/* Logo */}

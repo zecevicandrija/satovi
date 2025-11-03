@@ -1,83 +1,499 @@
+/* ===== FOOTER ===== */
 .footer {
-    background: var(--bg-dark);
+    background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
     color: var(--text-light);
-    padding: 80px 0 30px;
+    padding: 0 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Background */
+.bgAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bgGradient {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 60px;
+    position: relative;
+    z-index: 1;
 }
 
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletterContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.newsletterText {
+    max-width: 500px;
+}
+
+.newsletterTitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.newsletterSubtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+.newsletterForm {
+    max-width: 500px;
+}
+
+.newsletterInputWrapper {
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletterInput {
+    flex: 1;
+    padding: 16px 25px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newsletterInput::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletterInput:focus {
+    outline: none;
+}
+
+.newsletterBtn {
+    padding: 16px 35px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.newsletterBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.newsletterBtn:disabled {
+    background: rgba(76, 175, 80, 0.8);
+}
+
+.checkmark {
+    font-size: 18px;
+}
+
+.btnArrow {
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.newsletterBtn:hover:not(:disabled) .btnArrow {
+    transform: translateX(3px);
+}
+
+/* ===== MAIN FOOTER CONTENT ===== */
 .footerContent {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
-    margin-bottom: 60px;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding: 80px 0 60px;
 }
 
-.footerBrand h3 {
-    font-family: 'Cormorant Garamond', serif;
+/* Brand Column */
+.footerBrand {
+    max-width: 350px;
+}
+
+.brandLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.logoIcon {
     font-size: 32px;
+    animation: logoRotate 20s linear infinite;
+}
+
+@keyframes logoRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.logoText {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
     letter-spacing: 3px;
-    margin-bottom: 15px;
+    font-weight: 700;
+    color: white;
 }
 
-.footerBrand p {
+.brandTagline {
     font-size: 14px;
+    line-height: 1.8;
     color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 30px;
 }
 
-.footerLinks h4,
-.footerLegal h4 {
-    font-size: 14px;
+.socialLinks {
+    display: flex;
+    gap: 12px;
+}
+
+.socialLink {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.socialLink svg {
+    width: 20px;
+    height: 20px;
+}
+
+.socialLink:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Footer Columns */
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.columnTitle {
+    font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 25px;
     color: var(--primary-color);
+    font-weight: 700;
 }
 
-.footerLinks ul,
-.footerLegal ul {
+.columnLinks {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.footerLinks a,
-.footerLegal a {
-    color: rgba(255, 255, 255, 0.7);
+.columnLinks a {
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     font-size: 14px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
 }
 
-.footerLinks a:hover,
-.footerLegal a:hover {
+.columnLinks a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.columnLinks a:hover {
     color: var(--primary-color);
-    padding-left: 5px;
+    padding-left: 8px;
 }
 
-.footerBottom {
-    padding-top: 40px;
+.columnLinks a:hover::after {
+    width: 30px;
+}
+
+/* ===== PAYMENT SECTION ===== */
+.paymentSection {
+    padding: 40px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.footerBottom p {
+.paymentLabel {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.paymentMethods {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.paymentIcon {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.paymentIcon:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 175, 55, 0.3);
+    color: var(--primary-color);
+}
+
+/* ===== BOTTOM BAR ===== */
+.footerBottom {
+    padding-top: 40px;
+}
+
+.bottomContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.backToTop {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.backToTop svg {
+    width: 16px;
+    height: 16px;
+}
+
+.backToTop:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .footerContent {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 968px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .newsletter {
+        padding: 60px 0;
+    }
+
+    .newsletterContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .newsletterTitle {
+        font-size: 36px;
+    }
+
+    .newsletterForm {
+        max-width: 100%;
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding: 60px 0 50px;
+    }
+
+    .footerBrand {
+        grid-column: span 2;
+        max-width: 100%;
+    }
+
+    .paymentSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .paymentMethods {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .bottomContent {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 30px;
+        padding: 0 20px;
     }
-    
+
+    .newsletter {
+        padding: 50px 0;
+    }
+
+    .newsletterTitle {
+        font-size: 28px;
+    }
+
+    .newsletterSubtitle {
+        font-size: 14px;
+    }
+
+    .newsletterInputWrapper {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .newsletterBtn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 30px;
+    }
+
     .footerContent {
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 50px 0 40px;
+    }
+
+    .footerBrand {
+        grid-column: span 1;
+        text-align: center;
+    }
+
+    .brandLogo {
+        justify-content: center;
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+
+    .columnTitle {
+        text-align: center;
+    }
+
+    .columnLinks {
+        align-items: center;
+    }
+
+    .paymentMethods {
+        justify-content: center;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletterTitle {
+        font-size: 24px;
+    }
+
+    .logoText {
+        font-size: 24px;
+    }
+
+    .paymentMethods {
+        gap: 10px;
+    }
+
+    .paymentIcon {
+        padding: 8px 16px;
+        font-size: 12px;
     }
 }
