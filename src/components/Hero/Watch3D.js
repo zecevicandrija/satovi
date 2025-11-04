@@ -2,16 +2,32 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 function WatchModel() {
   const { scene } = useGLTF('/Assets/sat/scene.gltf')
+  const [isMobile, setIsMobile] = useState(false)
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+  
+  // Manja skala za mobilne uređaje
+  const scale = isMobile ? 18 : 25
+  const positionY = isMobile ? -1.0 : -1.3
   
   return (
     <primitive
       object={scene.clone()} 
-      scale={25}
-      position={[0, -1.3, 0]}
+      scale={scale}
+      position={[0, positionY, 0]}
       rotation={[0, 0, 0]}
     />
   )
@@ -25,16 +41,16 @@ export default function Watch3D() {
       gl={{ 
         antialias: true,
         alpha: true,
-        preserveDrawingBuffer: true // KRITIČNO za konzistentnost
+        preserveDrawingBuffer: true
       }}
       camera={{ 
         position: [0, 0, 3.5], 
         zoom: 100, 
         near: 0.1, 
         far: 100,
-        manual: false // Automatsko ažuriranje kamere
+        manual: false
       }}
-      dpr={1} // Fiksni pixel ratio
+      dpr={1}
     >
       <ambientLight intensity={0.7} />
       <directionalLight position={[5, 5, 5]} intensity={1.5} />

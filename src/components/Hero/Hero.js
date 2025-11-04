@@ -43,43 +43,7 @@ export default function Hero() {
       }, 1200)
     }
 
-    // Parallax effect for mobile watch
-    const isMobile = window.innerWidth <= 768
-    
-    if (isMobile) {
-      const heroWatch = document.querySelector(`.${styles.heroWatch}`)
-      const watchCircle = document.querySelector(`.${styles.watchCircle}`)
-      const watchPlaceholder = document.querySelector(`.${styles.watchPlaceholder}`)
-      
-      const handleScroll = () => {
-        const scrolled = window.pageYOffset
-        const heroHeight = document.querySelector(`.${styles.hero}`)?.offsetHeight || 0
-        
-        if (scrolled < heroHeight) {
-          const parallaxSpeed = 0.5
-          const translateY = scrolled * parallaxSpeed
-          
-          if (heroWatch) {
-            heroWatch.style.transform = `translateY(${translateY}px)`
-          }
-          
-          if (watchCircle) {
-            const currentRotation = (scrolled / 30) % 360
-            watchCircle.style.transform = `translateX(-50%) rotate(${currentRotation}deg) translateY(${translateY * 0.3}px)`
-          }
-          
-          if (watchPlaceholder) {
-            watchPlaceholder.style.transform = `translateY(${translateY * 0.7}px)`
-          }
-        }
-      }
-      
-      window.addEventListener('scroll', handleScroll, { passive: true })
-      
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
-      }
-    }
+    // No parallax effect - sat ostaje na mestu
   }, [])
 
   return (
@@ -112,11 +76,11 @@ export default function Hero() {
           </p>
           
           <div className={styles.heroButtons}>
-            <a href="#collection" className={styles.btnPrimary}>
+            <a href="/#collection" className={styles.btnPrimary}>
               <span className={styles.btnText}>Pogledaj Kolekciju</span>
               <span className={styles.btnArrow}>→</span>
             </a>
-            <a href="#features" className={styles.btnOutline}>
+            <a href="/#features" className={styles.btnOutline}>
               <span>Otkrijte Više</span>
             </a>
           </div>

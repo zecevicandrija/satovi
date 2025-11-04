@@ -10,6 +10,7 @@ import CTA from '../components/CTA/CTA'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Kviz from '../components/Kviz/Kviz'
+import Video from '../components/Video/Video'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <Story />
       <Collection />
+      <Video />
       <Features />
       <CTA />
       <Kviz />
