@@ -427,7 +427,7 @@ export default function Collection() {
                 <div className={styles.colorDot} style={{ background: watch.circleColor }}></div>
                 
                 <h3 className={styles.itemTitle}>{watch.title}</h3>
-                <p className={styles.itemSubtitle}>{watch.subtitle}</p>
+                {/* <p className={styles.itemSubtitle}>{watch.subtitle}</p> */}
                 <p className={styles.itemDesc}>{watch.description}</p>
 
                 {/* Rating */}
