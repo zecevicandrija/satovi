@@ -96,7 +96,7 @@ export default function Navbar() {
                 className={activeSection === 'home' ? styles.active : ''}
                 onClick={(e) => handleNavClick(e, '#home')}
               >
-                Početna
+                Home
               </a>
             </li>
             <li>
@@ -105,7 +105,7 @@ export default function Navbar() {
                 className={activeSection === 'collection' ? styles.active : ''}
                 onClick={(e) => handleNavClick(e, '#collection')}
               >
-                Kolekcija
+                Collection
               </a>
             </li>
             <li>
@@ -114,7 +114,7 @@ export default function Navbar() {
                 className={activeSection === 'features' ? styles.active : ''}
                 onClick={(e) => handleNavClick(e, '#features')}
               >
-                Karakteristike
+                Features
               </a>
             </li>
             <li>
@@ -123,7 +123,7 @@ export default function Navbar() {
                 className={activeSection === 'contact' ? styles.active : ''}
                 onClick={(e) => handleNavClick(e, '#contact')}
               >
-                Kontakt
+                Contact
               </a>
             </li>
           </ul>
@@ -136,7 +136,7 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, '#collection')}
             >
               <span className={styles.btnIcon}>🛒</span>
-              <span className={styles.btnText}>Poručite Sada</span>
+              <span className={styles.btnText}>Order Now</span>
               <span className={styles.btnShine}></span>
             </a>
           </div>
@@ -177,7 +177,7 @@ export default function Navbar() {
                 className={activeSection === 'home' ? styles.activeLink : ''}
               >
                 <span className={styles.menuNumber}>01</span>
-                <span className={styles.menuText}>Početna</span>
+                <span className={styles.menuText}>Home</span>
                 <span className={styles.menuArrow}>→</span>
               </a>
             </li>
@@ -188,7 +188,7 @@ export default function Navbar() {
                 className={activeSection === 'collection' ? styles.activeLink : ''}
               >
                 <span className={styles.menuNumber}>02</span>
-                <span className={styles.menuText}>Kolekcija</span>
+                <span className={styles.menuText}>Collection</span>
                 <span className={styles.menuArrow}>→</span>
               </a>
             </li>
@@ -199,7 +199,7 @@ export default function Navbar() {
                 className={activeSection === 'features' ? styles.activeLink : ''}
               >
                 <span className={styles.menuNumber}>03</span>
-                <span className={styles.menuText}>Karakteristike</span>
+                <span className={styles.menuText}>Features</span>
                 <span className={styles.menuArrow}>→</span>
               </a>
             </li>
@@ -210,7 +210,7 @@ export default function Navbar() {
                 className={activeSection === 'contact' ? styles.activeLink : ''}
               >
                 <span className={styles.menuNumber}>04</span>
-                <span className={styles.menuText}>Kontakt</span>
+                <span className={styles.menuText}>Contact</span>
                 <span className={styles.menuArrow}>→</span>
               </a>
             </li>
@@ -223,7 +223,7 @@ export default function Navbar() {
             onClick={(e) => handleNavClick(e, '#collection')}
           >
             <span className={styles.ctaIcon}>🛒</span>
-            <span>Poručite Sada</span>
+            <span>Order Now</span>
             <span className={styles.ctaArrow}>→</span>
           </a>
 
