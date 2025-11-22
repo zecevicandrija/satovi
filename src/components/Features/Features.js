@@ -6,9 +6,9 @@ import styles from './Features.module.css'
 const features = [
   {
     number: '01',
-    title: 'Švajcarska Preciznost',
+    title: 'Swiss Precision',
     subtitle: 'Swiss Made Excellence',
-    description: 'Automatski mehanizam vrhunskog kvaliteta garantuje tačnost od 99.9%. Svaki sat prolazi rigorozne testove kvaliteta.',
+    description: 'Premium quality automatic movement guarantees 99.9% accuracy. Every watch undergoes rigorous quality testing.',
     badge: 'Premium',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -18,13 +18,13 @@ const features = [
       </svg>
     ),
     stats: '99.9%',
-    statsLabel: 'Tačnost'
+    statsLabel: 'Accuracy'
   },
   {
     number: '02',
-    title: 'Premium Materijali',
+    title: 'Premium Materials',
     subtitle: 'Luxury Craftsmanship',
-    description: 'Nehrđajući čelik 316L i safirno staklo otporno na grebanje. Vodootporno do 100m sa zaštitom od magnetnih polja.',
+    description: '316L stainless steel and scratch-resistant sapphire crystal. Water-resistant up to 100m with magnetic field protection.',
     badge: 'Certified',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -34,13 +34,13 @@ const features = [
       </svg>
     ),
     stats: '316L',
-    statsLabel: 'Čelik'
+    statsLabel: 'Steel'
   },
   {
     number: '03',
-    title: 'Dizajn sa Strašću',
+    title: 'Design with Passion',
     subtitle: 'Timeless Elegance',
-    description: 'Svaki detalj pažljivo osmišljen od strane award-winning dizajnera. Minimalistička elegancija koja nikad ne izlazi iz mode.',
+    description: 'Every detail carefully crafted by award-winning designers. Minimalist elegance that never goes out of style.',
     badge: 'Award Winner',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -48,14 +48,14 @@ const features = [
       </svg>
     ),
     stats: '200+',
-    statsLabel: 'Sati rada'
+    statsLabel: 'Work Hours'
   },
   {
     number: '04',
-    title: '5 Godina Garancije',
+    title: '5 Year Warranty',
     subtitle: 'Protected Investment',
-    description: 'Potpuna međunarodna garancija sa besplatnim servisom i održavanjem. Vaša investicija je u sigurnim rukama.',
-    badge: 'Garantovano',
+    description: 'Full international warranty with free service and maintenance. Your investment is in safe hands.',
+    badge: 'Guaranteed',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -63,13 +63,13 @@ const features = [
       </svg>
     ),
     stats: '5',
-    statsLabel: 'Godina'
+    statsLabel: 'Years'
   },
   {
     number: '05',
-    title: '24/7 Premium Podrška',
+    title: '24/7 Premium Support',
     subtitle: 'Always Here For You',
-    description: 'Naš ekspertski tim je dostupan non-stop putem chata, telefona ili emaila. Odgovor u manje od 1 sata garantovan.',
+    description: 'Our expert team is available 24/7 via chat, phone or email. Response in less than 1 hour guaranteed.',
     badge: 'Live Support',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -79,13 +79,13 @@ const features = [
       </svg>
     ),
     stats: '<1h',
-    statsLabel: 'Odgovor'
+    statsLabel: 'Response'
   },
   {
     number: '06',
-    title: 'Besplatna Dostava',
+    title: 'Free Shipping',
     subtitle: 'Express Worldwide',
-    description: 'Brza i sigurna dostava sa tracking-om i premium pakovanjem. Osiguranje uključeno. Dostava za 2-3 dana u Srbiji.',
+    description: 'Fast and secure delivery with tracking and premium packaging. Insurance included. 2-3 day delivery in Serbia.',
     badge: 'Express',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -96,7 +96,7 @@ const features = [
       </svg>
     ),
     stats: '2-3',
-    statsLabel: 'Dana'
+    statsLabel: 'Days'
   }
 ]
 
@@ -168,15 +168,15 @@ export default function Features() {
         <div className={`${styles.sectionHeader} ${isVisible ? styles.headerVisible : ''}`}>
           <span className={styles.sectionLabel}>
             <span className={styles.labelIcon}>✦</span>
-            Zašto Mi
+            Why Us
             <span className={styles.labelIcon}>✦</span>
           </span>
           <h2 className={styles.sectionTitle}>
-            Perfekcija u
-            <span className={styles.titleHighlight}> Svakom Detalju</span>
+            Perfection in
+            <span className={styles.titleHighlight}> Every Detail</span>
           </h2>
           <p className={styles.sectionSubtitle}>
-            Kombinacija švajcarske preciznosti, italijanskog dizajna i naše strasti za savršenstvom
+            A combination of Swiss precision, Italian design and our passion for perfection
           </p>
         </div>
 
@@ -241,13 +241,13 @@ export default function Features() {
               </svg>
             </div>
             <div className={styles.ctaContent}>
-              <h3 className={styles.ctaTitle}>Spremni za savršen sat?</h3>
+              <h3 className={styles.ctaTitle}>Ready for the perfect watch?</h3>
               <p className={styles.ctaText}>
-                Pridružite se hiljadama zadovoljnih kupaca koji su već izabrali kvalitet
+                Join thousands of satisfied customers who have already chosen quality
               </p>
             </div>
             <button className={styles.ctaButton}>
-              <span>Pregledaj Kolekciju</span>
+              <span>View Collection</span>
               <span className={styles.ctaButtonArrow}>→</span>
             </button>
           </div>

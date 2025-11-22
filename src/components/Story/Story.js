@@ -100,7 +100,7 @@ export default function Story() {
       setCounts(prev => ({ ...prev, support: supportCount }))
     }, 50)
 
-    // Warranty: 0 -> 5
+    // Warranty: 0 -> 2
     let warrantyCount = 0
     const warrantyInterval = setInterval(() => {
       warrantyCount += 1
@@ -120,26 +120,26 @@ export default function Story() {
           <div className={styles.storyContent} ref={contentRef}>
             <span className={styles.sectionLabel}>
               <span className={styles.labelIcon}>✦</span>
-              Naša Priča
+              Our Story
               <span className={styles.labelIcon}>✦</span>
             </span>
             <h2 className={styles.sectionTitle}>
-              Gde Tradicija Susreće
-              <span className={styles.titleHighlight}> Inovaciju</span>
+              Where Tradition Meets
+              <span className={styles.titleHighlight}> Innovation</span>
             </h2>
             <p className={styles.storyText}>
-              Svaki sat je remek-delo pažljivo dizajnirano da odražava vašu jedinstvenu 
-              individualnost. Kombinujemo vanvremensku eleganciju sa modernom preciznošću, 
-              stvarajući izuzetan komad koji ćete nositi sa ponosom decenijama.
+              Every watch is a masterpiece carefully designed to reflect your unique 
+              individuality. We combine timeless elegance with modern precision, 
+              creating an exceptional piece you'll wear with pride for decades.
             </p>
             <p className={styles.storyTextSecondary}>
-              Od izbora najfinijih materijala do poslednjeg poteza masterov, svaki detalj 
-              je osmišljen da pruži savršenu harmoniju forme i funkcije.
+              From selecting the finest materials to the final master's touch, every detail 
+              is crafted to provide the perfect harmony of form and function.
             </p>
             
             {/* CTA Button */}
             <a href="#collection" className={styles.storyButton}>
-              <span>Istražite Kolekciju</span>
+              <span>Explore Collection</span>
               <span className={styles.buttonArrow}>→</span>
             </a>
           </div>
@@ -152,10 +152,10 @@ export default function Story() {
             <div className={styles.imagePlaceholder}>
               {/* <img 
                 src="/Assets/pngsat.png" 
-                alt="Premium sat CHRONOS" 
+                alt="CHRONOS Premium Watch" 
                 className={styles.watchImage}
               /> */}
-              {/* Ovde možeš staviti sliku sata ili grafiku */}
+              {/* You can place a watch image or graphic here */}
               <div className={styles.watchIllustration}>
                 <div className={styles.watchFrame}></div>
                 <div className={styles.watchDetails}>
@@ -178,8 +178,8 @@ export default function Story() {
             <span className={styles.statNumber}>
               {counts.precision}%
             </span>
-            <span className={styles.statLabel}>Švajcarska Preciznost</span>
-            <span className={styles.statDescription}>Mehanizam najfinijeg kvaliteta</span>
+            <span className={styles.statLabel}>Swiss Precision</span>
+            <span className={styles.statDescription}>Finest quality movement</span>
           </div>
           <div 
             className={styles.statItem}
@@ -189,8 +189,8 @@ export default function Story() {
             <span className={styles.statNumber}>
               {counts.support}/7
             </span>
-            <span className={styles.statLabel}>Premium Podrška</span>
-            <span className={styles.statDescription}>Uvek tu za vas</span>
+            <span className={styles.statLabel}>Premium Support</span>
+            <span className={styles.statDescription}>Always here for you</span>
           </div>
           <div 
             className={styles.statItem}
@@ -198,10 +198,10 @@ export default function Story() {
           >
             <div className={styles.statIcon}>💎</div>
             <span className={styles.statNumber}>
-              {counts.warranty} God
+              {counts.warranty} Years
             </span>
-            <span className={styles.statLabel}>Garancija</span>
-            <span className={styles.statDescription}>Osigurana kvaliteta</span>
+            <span className={styles.statLabel}>Warranty</span>
+            <span className={styles.statDescription}>Quality assured</span>
           </div>
         </div>
         
@@ -214,9 +214,9 @@ export default function Story() {
             <div className={styles.featureIconWrapper}>
               <span className={styles.featureIcon}>🔬</span>
             </div>
-            <h3 className={styles.featureTitle}>Ručna Izrada</h3>
+            <h3 className={styles.featureTitle}>Handcrafted</h3>
             <p className={styles.featureText}>
-              Svaki sat je pažljivo sklopljen od strane iskusnih majstora sa više od 200 sati rada
+              Each watch is carefully assembled by experienced masters with over 200 hours of work
             </p>
           </div>
           
@@ -227,9 +227,9 @@ export default function Story() {
             <div className={styles.featureIconWrapper}>
               <span className={styles.featureIcon}>✨</span>
             </div>
-            <h3 className={styles.featureTitle}>Premium Materijali</h3>
+            <h3 className={styles.featureTitle}>Premium Materials</h3>
             <p className={styles.featureText}>
-              Safirno staklo, nehrđajući čelik 316L i kožne narukvice najvišeg kvaliteta
+              Sapphire crystal, 316L stainless steel and highest quality leather straps
             </p>
           </div>
           
@@ -240,9 +240,9 @@ export default function Story() {
             <div className={styles.featureIconWrapper}>
               <span className={styles.featureIcon}>🏆</span>
             </div>
-            <h3 className={styles.featureTitle}>Doživotna Vrednost</h3>
+            <h3 className={styles.featureTitle}>Lifetime Value</h3>
             <p className={styles.featureText}>
-              Vremenski dizajn koji zadržava vrednost i postaje deo vaše porodične tradicije
+              Timeless design that retains value and becomes part of your family tradition
             </p>
           </div>
         </div>

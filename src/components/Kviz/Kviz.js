@@ -124,19 +124,19 @@ export default function Kviz() {
       return {
         name: 'Classic Minimalist',
         image: '/Assets/sat1.jpg',
-        description: 'Elegantan i jednostavan dizajn za svakodnevno nošenje.'
+        description: 'Elegant and simple design for everyday wear.'
       }
     } else if (style === 'unique') {
       return {
         name: 'Bold Statement',
         image: '/Assets/sat2.jpg',
-        description: 'Jedinstveni dizajn koji privlači pažnju.'
+        description: 'Unique design that attracts attention.'
       }
     } else {
       return {
         name: 'Versatile Classic',
         image: '/Assets/sat3.jpg',
-        description: 'Savršena kombinacija stila i funkcionalnosti.'
+        description: 'Perfect combination of style and functionality.'
       }
     }
   }
@@ -155,37 +155,37 @@ export default function Kviz() {
         <div className={styles.kvizContent} ref={contentRef}>
           <span className={styles.badge}>
             <span className={styles.badgeIcon}>🎯</span>
-            Personalizovano Za Vas
+            Personalized For You
           </span>
           
           <h2 className={styles.kvizTitle}>
-            Pronađite Svoj
-            <span className={styles.titleGold}>‎ Savršeni Sat</span>
+            Find Your
+            <span className={styles.titleGold}>‎ Perfect Watch</span>
           </h2>
           
           <p className={styles.kvizSubtitle}>
-            Odgovorite na nekoliko brzih pitanja i preporučićemo Vam idealan sat 
-            koji odgovara Vašem stilu i potrebama.
+            Answer a few quick questions and we'll recommend the ideal watch 
+            that matches your style and needs.
           </p>
           
           <button className={styles.btnStart} onClick={openModal}>
             <span className={styles.btnIcon}>✨</span>
-            <span>Započni Kviz</span>
+            <span>Start Quiz</span>
             <span className={styles.btnArrow}>→</span>
           </button>
 
           <div className={styles.features}>
             <div className={styles.feature}>
               <span className={styles.featureIcon}>⚡</span>
-              <span>2 minuta</span>
+              <span>2 minutes</span>
             </div>
             <div className={styles.feature}>
               <span className={styles.featureIcon}>🎁</span>
-              <span>10% popust</span>
+              <span>10% discount</span>
             </div>
             <div className={styles.feature}>
               <span className={styles.featureIcon}>💎</span>
-              <span>Personalizovano</span>
+              <span>Personalized</span>
             </div>
           </div>
         </div>
@@ -220,21 +220,21 @@ export default function Kviz() {
               </div>
             )}
 
-            {/* Step 0: Ime */}
+            {/* Step 0: Name */}
             {step === 0 && (
               <div className={`${styles.step} ${styles[direction]}`}>
                 <div className={styles.stepHeader}>
                   <span className={styles.stepNumber}>01</span>
-                  <h3 className={styles.stepTitle}>Dobrodošli!</h3>
+                  <h3 className={styles.stepTitle}>Welcome!</h3>
                 </div>
                 
-                <p className={styles.stepSubtitle}>Započnimo sa Vašim imenom</p>
+                <p className={styles.stepSubtitle}>Let's start with your name</p>
                 
                 <div className={styles.inputWrapper}>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Npr. Marko"
+                    placeholder="E.g. John"
                     value={answers.name}
                     onChange={(e) => setAnswers({ ...answers, name: e.target.value })}
                     onKeyPress={(e) => e.key === 'Enter' && answers.name && handleNext()}
@@ -248,21 +248,21 @@ export default function Kviz() {
                   onClick={handleNext}
                   disabled={!answers.name}
                 >
-                  <span>Nastavi</span>
+                  <span>Continue</span>
                   <span className={styles.btnNextArrow}>→</span>
                 </button>
               </div>
             )}
 
-            {/* Step 1: Za koga je sat */}
+            {/* Step 1: Who is the watch for */}
             {step === 1 && (
               <div className={`${styles.step} ${styles[direction]}`}>
                 <div className={styles.stepHeader}>
                   <span className={styles.stepNumber}>02</span>
-                  <h3 className={styles.stepTitle}>Zdravo {answers.name}! 👋</h3>
+                  <h3 className={styles.stepTitle}>Hello {answers.name}! 👋</h3>
                 </div>
                 
-                <p className={styles.stepSubtitle}>Za koga je ovaj sat?</p>
+                <p className={styles.stepSubtitle}>Who is this watch for?</p>
                 
                 <div className={styles.options}>
                   <button 
@@ -270,7 +270,7 @@ export default function Kviz() {
                     onClick={() => handleAnswer('recipient', 'loved-one')}
                   >
                     <span className={styles.optionIcon}>❤️</span>
-                    <span className={styles.optionText}>Voljenu Osobu</span>
+                    <span className={styles.optionText}>Loved One</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -278,7 +278,7 @@ export default function Kviz() {
                     onClick={() => handleAnswer('recipient', 'myself')}
                   >
                     <span className={styles.optionIcon}>😊</span>
-                    <span className={styles.optionText}>Sebe</span>
+                    <span className={styles.optionText}>Myself</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -286,7 +286,7 @@ export default function Kviz() {
                     onClick={() => handleAnswer('recipient', 'friend')}
                   >
                     <span className={styles.optionIcon}>🤝</span>
-                    <span className={styles.optionText}>Prijatelja</span>
+                    <span className={styles.optionText}>Friend</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -294,22 +294,22 @@ export default function Kviz() {
                     onClick={() => handleAnswer('recipient', 'parent')}
                   >
                     <span className={styles.optionIcon}>👨‍👩‍👦</span>
-                    <span className={styles.optionText}>Roditelja</span>
+                    <span className={styles.optionText}>Parent</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Step 2: Stil */}
+            {/* Step 2: Style */}
             {step === 2 && (
               <div className={`${styles.step} ${styles[direction]}`}>
                 <div className={styles.stepHeader}>
                   <span className={styles.stepNumber}>03</span>
-                  <h3 className={styles.stepTitle}>Odlično! 🎨</h3>
+                  <h3 className={styles.stepTitle}>Great! 🎨</h3>
                 </div>
                 
-                <p className={styles.stepSubtitle}>Koji stil Vam se najviše dopada?</p>
+                <p className={styles.stepSubtitle}>Which style do you prefer most?</p>
                 
                 <div className={styles.options}>
                   <button 
@@ -317,8 +317,8 @@ export default function Kviz() {
                     onClick={() => handleAnswer('style', 'minimalist')}
                   >
                     <span className={styles.optionIcon}>⚪</span>
-                    <span className={styles.optionText}>Minimalističan</span>
-                    <span className={styles.optionDesc}>Čist i elegantan dizajn</span>
+                    <span className={styles.optionText}>Minimalist</span>
+                    <span className={styles.optionDesc}>Clean and elegant design</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -326,8 +326,8 @@ export default function Kviz() {
                     onClick={() => handleAnswer('style', 'unique')}
                   >
                     <span className={styles.optionIcon}>✨</span>
-                    <span className={styles.optionText}>Jedinstveno & Moćno</span>
-                    <span className={styles.optionDesc}>Statement komad</span>
+                    <span className={styles.optionText}>Unique & Bold</span>
+                    <span className={styles.optionDesc}>Statement piece</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -335,23 +335,23 @@ export default function Kviz() {
                     onClick={() => handleAnswer('style', 'anything')}
                   >
                     <span className={styles.optionIcon}>🎨</span>
-                    <span className={styles.optionText}>Sve Može</span>
-                    <span className={styles.optionDesc}>Otvoren za sve stilove</span>
+                    <span className={styles.optionText}>Anything Goes</span>
+                    <span className={styles.optionDesc}>Open to all styles</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Step 3: Učestalost kupovine */}
+            {/* Step 3: Purchase frequency */}
             {step === 3 && (
               <div className={`${styles.step} ${styles[direction]}`}>
                 <div className={styles.stepHeader}>
                   <span className={styles.stepNumber}>04</span>
-                  <h3 className={styles.stepTitle}>Sjajno! ⭐</h3>
+                  <h3 className={styles.stepTitle}>Excellent! ⭐</h3>
                 </div>
                 
-                <p className={styles.stepSubtitle}>Koliko često kupujete satove?</p>
+                <p className={styles.stepSubtitle}>How often do you buy watches?</p>
                 
                 <div className={styles.options}>
                   <button 
@@ -359,8 +359,8 @@ export default function Kviz() {
                     onClick={() => handleAnswer('frequency', 'rarely')}
                   >
                     <span className={styles.optionIcon}>🌙</span>
-                    <span className={styles.optionText}>Retko</span>
-                    <span className={styles.optionDesc}>Posebne prilike</span>
+                    <span className={styles.optionText}>Rarely</span>
+                    <span className={styles.optionDesc}>Special occasions</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -368,8 +368,8 @@ export default function Kviz() {
                     onClick={() => handleAnswer('frequency', 'sometimes')}
                   >
                     <span className={styles.optionIcon}>☀️</span>
-                    <span className={styles.optionText}>Povremeno</span>
-                    <span className={styles.optionDesc}>Nekoliko puta godišnje</span>
+                    <span className={styles.optionText}>Sometimes</span>
+                    <span className={styles.optionDesc}>Few times a year</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                   <button 
@@ -377,32 +377,32 @@ export default function Kviz() {
                     onClick={() => handleAnswer('frequency', 'often')}
                   >
                     <span className={styles.optionIcon}>⭐</span>
-                    <span className={styles.optionText}>Često</span>
-                    <span className={styles.optionDesc}>Volim novu kolekciju</span>
+                    <span className={styles.optionText}>Often</span>
+                    <span className={styles.optionDesc}>Love new collections</span>
                     <span className={styles.optionCheck}>✓</span>
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Step 4: Email za popust */}
+            {/* Step 4: Email for discount */}
             {step === 4 && (
               <div className={`${styles.step} ${styles[direction]}`}>
                 <div className={styles.stepHeader}>
                   <span className={styles.stepNumber}>05</span>
-                  <h3 className={styles.stepTitle}>Imamo rezultat! 🎉</h3>
+                  <h3 className={styles.stepTitle}>We have a result! 🎉</h3>
                 </div>
                 
-                <p className={styles.stepSubtitle}>Želite li 10% popusta na Vašu kupovinu?</p>
+                <p className={styles.stepSubtitle}>Would you like 10% off your purchase?</p>
                 <p className={styles.stepDescription}>
-                  Unesite email i dobićete ekskluzivni kod
+                  Enter your email and get an exclusive code
                 </p>
                 
                 <div className={styles.inputWrapper}>
                   <input
                     type="email"
                     className={styles.input}
-                    placeholder="vas.email@example.com"
+                    placeholder="your.email@example.com"
                     value={answers.email}
                     onChange={(e) => setAnswers({ ...answers, email: e.target.value })}
                     onKeyPress={(e) => e.key === 'Enter' && answers.email && submitEmail()}
@@ -416,31 +416,31 @@ export default function Kviz() {
                     onClick={submitEmail} 
                     disabled={!answers.email || !validateEmail(answers.email)}
                   >
-                    <span>Pošalji</span>
+                    <span>Send</span>
                     <span className={styles.btnNextArrow}>→</span>
                   </button>
                   <button className={styles.btnSkip} onClick={skipEmail}>
-                    Ne hvala, nastavi
+                    No thanks, continue
                   </button>
                 </div>
 
                 <p className={styles.privacyText}>
-                  🔒 Vaši podaci su sigurni i neće biti deljeni
+                  🔒 Your data is safe and will not be shared
                 </p>
               </div>
             )}
 
-            {/* Step 5: Rezultat */}
+            {/* Step 5: Result */}
             {step === 5 && (
               <div className={`${styles.step} ${styles[direction]}`}>
                 <div className={styles.resultHeader}>
                   <div className={styles.resultBadge}>
                     <span className={styles.resultBadgeIcon}>🎯</span>
-                    <span>Vaša Preporuka</span>
+                    <span>Your Recommendation</span>
                   </div>
-                  <h3 className={styles.resultTitle}>Savršeno Odgovara!</h3>
+                  <h3 className={styles.resultTitle}>Perfect Match!</h3>
                   <p className={styles.resultSubtitle}>
-                    Na osnovu Vaših odgovora, ovo je idealan sat za Vas
+                    Based on your answers, this is the ideal watch for you
                   </p>
                 </div>
 
@@ -457,9 +457,9 @@ export default function Kviz() {
                     <p className={styles.resultDescription}>{recommendation.description}</p>
                     
                     <div className={styles.resultFeatures}>
-                      <span className={styles.resultFeature}>✓ Premium kvalitet</span>
-                      <span className={styles.resultFeature}>✓ 5 godina garancije</span>
-                      <span className={styles.resultFeature}>✓ Besplatna dostava</span>
+                      <span className={styles.resultFeature}>✓ Premium quality</span>
+                      <span className={styles.resultFeature}>✓ 5 year warranty</span>
+                      <span className={styles.resultFeature}>✓ Free shipping</span>
                     </div>
                   </div>
                 </div>
@@ -468,20 +468,20 @@ export default function Kviz() {
                   <div className={styles.discountBox}>
                     <span className={styles.discountIcon}>🎁</span>
                     <div className={styles.discountText}>
-                      <strong>Proverite Vaš email!</strong>
-                      <p>Poslali smo Vam kod sa 10% popustom</p>
+                      <strong>Check your email!</strong>
+                      <p>We sent you a code with 10% discount</p>
                     </div>
                   </div>
                 )}
 
                 <div className={styles.resultActions}>
                   <a href="#collection" className={styles.btnResult} onClick={closeModal}>
-                    <span>Pogledajte Kolekciju</span>
+                    <span>View Collection</span>
                     <span className={styles.btnResultArrow}>→</span>
                   </a>
                   <button className={styles.btnShare}>
                     <span>📤</span>
-                    <span>Podeli</span>
+                    <span>Share</span>
                   </button>
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function Kviz() {
 
             {/* Step Counter */}
             <div className={styles.stepCounter}>
-              {step < 5 ? `Pitanje ${step + 1} od 5` : 'Gotovo!'}
+              {step < 5 ? `Question ${step + 1} of 5` : 'Complete!'}
             </div>
           </div>
         </div>

@@ -62,26 +62,26 @@ export default function Hero() {
           {/* Premium Badge */}
           <div className={styles.heroBadge}>
             <span className={styles.badgeIcon}>✦</span>
-            <span>Ekskluzivna Kolekcija 2025</span>
+            <span>Exclusive Collection 2025</span>
             <span className={styles.badgeIcon}>✦</span>
           </div>
           
           <h1 className={styles.heroTitle}>
-            <span className={styles.titleLine}>Vreme je</span>
-            <span className={`${styles.titleLine} ${styles.titleMain}`}>Umetnost</span>
+            <span className={styles.titleLine}>Time is</span>
+            <span className={`${styles.titleLine} ${styles.titleMain}`}>Art</span>
           </h1>
           
           <p className={styles.heroSubtitle}>
-            Otkrijte savršenu harmoniju elegancije i preciznosti
+            Discover the perfect harmony of elegance and precision
           </p>
           
           <div className={styles.heroButtons}>
             <a href="/#collection" className={styles.btnPrimary}>
-              <span className={styles.btnText}>Pogledaj Kolekciju</span>
+              <span className={styles.btnText}>View Collection</span>
               <span className={styles.btnArrow}>→</span>
             </a>
             <a href="/#features" className={styles.btnOutline}>
-              <span>Otkrijte Više</span>
+              <span>Discover More</span>
             </a>
           </div>
           
@@ -89,15 +89,15 @@ export default function Hero() {
           <div className={styles.trustBadges}>
             <div className={styles.trustItem}>
               <span className={styles.trustIcon}>🏆</span>
-              <span className={styles.trustText}>2 God. Garancija</span>
+              <span className={styles.trustText}>2 Year Warranty</span>
             </div>
             <div className={styles.trustItem}>
               <span className={styles.trustIcon}>🚚</span>
-              <span className={styles.trustText}>Besplatna Dostava</span>
+              <span className={styles.trustText}>Free Shipping</span>
             </div>
             <div className={styles.trustItem}>
               <span className={styles.trustIcon}>💎</span>
-              <span className={styles.trustText}>Premium Materijali</span>
+              <span className={styles.trustText}>Premium Materials</span>
             </div>
           </div>
         </div>
@@ -118,15 +118,15 @@ export default function Hero() {
           {/* Floating features around watch */}
           <div className={styles.floatingFeature} style={{ top: '10%', right: '10%' }}>
             <div className={styles.featureDot}></div>
-            <div className={styles.featureLabel}>Safirno staklo</div>
+            <div className={styles.featureLabel}>Sapphire Crystal</div>
           </div>
           <div className={styles.floatingFeature} style={{ bottom: '20%', right: '5%' }}>
             <div className={styles.featureDot}></div>
-            <div className={styles.featureLabel}>Vodootporan</div>
+            <div className={styles.featureLabel}>Water Resistant</div>
           </div>
           <div className={styles.floatingFeature} style={{ top: '30%', left: '5%' }}>
             <div className={styles.featureDot}></div>
-            <div className={styles.featureLabel}>Švajcarski mehanizam</div>
+            <div className={styles.featureLabel}>Swiss Movement</div>
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'CHRONOS - Luksuzni Satovi',
-  description: 'Otkrijte savršenu harmoniju elegancije i preciznosti',
+  title: 'CHRONOS - Luxury Watches',
+  description: 'Discover the perfect harmony of elegance and precision',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sr">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -93,24 +93,24 @@ export default function Video() {
             </span>
             
             <h2 className={styles.heroTitle}>
-              Majstorstvo koje
+              Craftsmanship that
               <span className={styles.titleBreak}></span>
-              <span className={styles.titleGold}> Traje Večno</span>
+              <span className={styles.titleGold}> Lasts Forever</span>
             </h2>
             
             {/* <p className={styles.heroSubtitle}>
-              Svaki sat je remek-delo preciznosti, dizajniran sa strašću 
-              i izrađen od najfinijih materijala za one koji cene savršenstvo.
+              Every watch is a masterpiece of precision, designed with passion 
+              and crafted from the finest materials for those who appreciate perfection.
             </p> */}
 
             <div className={styles.heroCta}>
               <a href="#collection" className={styles.btnPrimary}>
-                <span>Istražite Kolekciju</span>
+                <span>Explore Collection</span>
                 <span className={styles.btnArrow}>→</span>
               </a>
               <a href="#features" className={styles.btnSecondary}>
                 {/* <span className={styles.playIcon}>▶</span> */}
-                <span>Kontaktirajte Nas</span>
+                <span>Contact Us</span>
               </a>
             </div>
 
@@ -118,22 +118,22 @@ export default function Video() {
             <div className={styles.statsBar}>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>10+</span>
-                <span className={styles.statLabel}>Godina Tradicije</span>
+                <span className={styles.statLabel}>Years of Tradition</span>
               </div>
               <div className={styles.statDivider}></div>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>1000+</span>
-                <span className={styles.statLabel}>Zadovoljnih Kupaca</span>
+                <span className={styles.statLabel}>Satisfied Customers</span>
               </div>
               <div className={styles.statDivider}></div>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>99%</span>
-                <span className={styles.statLabel}>Preciznost</span>
+                <span className={styles.statLabel}>Precision</span>
               </div>
               <div className={styles.statDivider}></div>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>2</span>
-                <span className={styles.statLabel}>Godine Garancije</span>
+                <span className={styles.statLabel}>Year Warranty</span>
               </div>
             </div>
           </div>
@@ -144,10 +144,10 @@ export default function Video() {
       <div className={styles.showcaseSection}>
         <div className={styles.container}>
           <div className={styles.showcaseHeader}>
-            <span className={styles.showcaseLabel}>Detalji Koji Govore</span>
+            <span className={styles.showcaseLabel}>Details That Speak</span>
             <h3 className={styles.showcaseTitle}>
-              Svaki Sat Priča
-              <span className={styles.showcaseTitleGold}>‎ Svoju Priču</span>
+              Every Watch Tells
+              <span className={styles.showcaseTitleGold}>‎ Its Story</span>
             </h3>
           </div>
 
@@ -155,13 +155,13 @@ export default function Video() {
             {/* Large Feature */}
             <div className={styles.showcaseItem} data-size="large">
               <div className={styles.showcaseImage}>
-                <img src="/Assets/sat5.jpg" alt="Sat detalj mehanizam" />
+                <img src="/Assets/sat5.jpg" alt="Watch mechanism detail" />
                 <div className={styles.showcaseOverlay}>
                   <div className={styles.showcaseContent}>
-                    <span className={styles.showcaseTag}>Švajcarski Mehanizam</span>
-                    <h4 className={styles.showcaseItemTitle}>Automatski Mehanizam</h4>
+                    <span className={styles.showcaseTag}>Swiss Movement</span>
+                    <h4 className={styles.showcaseItemTitle}>Automatic Movement</h4>
                     <p className={styles.showcaseItemDesc}>
-                      Preciznost koja ne zahteva bateriju. Svaki pokret ruke pokreće perfekciju.
+                      Precision that requires no battery. Every wrist movement powers perfection.
                     </p>
                   </div>
                 </div>
@@ -171,13 +171,13 @@ export default function Video() {
             {/* Medium Items */}
             <div className={styles.showcaseItem} data-size="medium">
               <div className={styles.showcaseImage}>
-                <img src="/Assets/sat6.jpg" alt="Safirno staklo" />
+                <img src="/Assets/sat6.jpg" alt="Sapphire crystal" />
                 <div className={styles.showcaseOverlay}>
                   <div className={styles.showcaseContent}>
-                    <span className={styles.showcaseTag}>Premium Materijali</span>
-                    <h4 className={styles.showcaseItemTitle}>Safirno Staklo</h4>
+                    <span className={styles.showcaseTag}>Premium Materials</span>
+                    <h4 className={styles.showcaseItemTitle}>Sapphire Crystal</h4>
                     <p className={styles.showcaseItemDesc}>
-                      Otporno na grebanje i kristalno čisto.
+                      Scratch-resistant and crystal clear.
                     </p>
                   </div>
                 </div>
@@ -186,13 +186,13 @@ export default function Video() {
 
             <div className={styles.showcaseItem} data-size="medium">
               <div className={styles.showcaseImage}>
-                <img src="/Assets/sat4.jpg" alt="Nehrđajući čelik" />
+                <img src="/Assets/sat4.jpg" alt="Stainless steel" />
                 <div className={styles.showcaseOverlay}>
                   <div className={styles.showcaseContent}>
-                    <span className={styles.showcaseTag}>316L Čelik</span>
-                    <h4 className={styles.showcaseItemTitle}>Nehrđajući Čelik</h4>
+                    <span className={styles.showcaseTag}>316L Steel</span>
+                    <h4 className={styles.showcaseItemTitle}>Stainless Steel</h4>
                     <p className={styles.showcaseItemDesc}>
-                      Antikorozivan i hipoalergen za maksimalnu trajnost.
+                      Anti-corrosive and hypoallergenic for maximum durability.
                     </p>
                   </div>
                 </div>
@@ -202,11 +202,11 @@ export default function Video() {
             {/* Small Items */}
             <div className={styles.showcaseItem} data-size="small">
               <div className={styles.showcaseImage}>
-                <img src="/Assets/sat1.jpg" alt="Vodootpornost" />
+                <img src="/Assets/sat1.jpg" alt="Water resistant" />
                 <div className={styles.showcaseOverlay}>
                   <div className={styles.showcaseContent}>
                     <span className={styles.showcaseTag}>100M</span>
-                    <h4 className={styles.showcaseItemTitle}>Vodootporan</h4>
+                    <h4 className={styles.showcaseItemTitle}>Water Resistant</h4>
                   </div>
                 </div>
               </div>
@@ -214,11 +214,11 @@ export default function Video() {
 
             <div className={styles.showcaseItem} data-size="small">
               <div className={styles.showcaseImage}>
-                <img src="/Assets/sat2.jpg" alt="Luminozni kazaljke" />
+                <img src="/Assets/sat2.jpg" alt="Luminous hands" />
                 <div className={styles.showcaseOverlay}>
                   <div className={styles.showcaseContent}>
                     <span className={styles.showcaseTag}>Swiss Lume</span>
-                    <h4 className={styles.showcaseItemTitle}>Svetli u Mraku</h4>
+                    <h4 className={styles.showcaseItemTitle}>Glows in Dark</h4>
                   </div>
                 </div>
               </div>
@@ -235,32 +235,32 @@ export default function Video() {
             transform: `translateY(${scrollProgress * 100}px)`
           }}
         >
-          <img src="/Assets/sat2.jpg" alt="Premium sat detalj" />
+          <img src="/Assets/sat2.jpg" alt="Premium watch detail" />
         </div>
         <div className={styles.parallaxContent}>
           <div className={styles.container}>
             <div className={styles.parallaxText}>
               <span className={styles.parallaxLabel}>Handcrafted Perfection</span>
               <h3 className={styles.parallaxTitle}>
-                Stvoreno Za
-                <span className={styles.parallaxTitleGold}>‎ Izvrsnost</span>
+                Built For
+                <span className={styles.parallaxTitleGold}>‎ Excellence</span>
               </h3>
               <p className={styles.parallaxDesc}>
-                Svaki sat prolazi kroz 200+ sati pažljive izrade. 
-                Od biranja materijala do finalnog poliranja - svaki korak je majstorstvo.
+                Every watch goes through 200+ hours of careful craftsmanship. 
+                From selecting materials to final polishing - every step is mastery.
               </p>
               <div className={styles.parallaxFeatures}>
                 <div className={styles.featureItem}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>200+ sati ručne izrade</span>
+                  <span>200+ hours of handcrafting</span>
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>15+ kontrola kvaliteta</span>
+                  <span>15+ quality checks</span>
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>Doživotna podrška</span>
+                  <span>Lifetime support</span>
                 </div>
               </div>
             </div>
@@ -273,14 +273,14 @@ export default function Video() {
         <div className={styles.container}>
           <div className={styles.ctaContent}>
             <h3 className={styles.ctaTitle}>
-              Spremni Za Vaše Sledeće
-              <span className={styles.ctaTitleGold}>‎Remek-Delo?</span>
+              Ready For Your Next
+              <span className={styles.ctaTitleGold}>‎ Masterpiece?</span>
             </h3>
             <p className={styles.ctaSubtitle}>
-              Istražite našu ekskluzivnu kolekciju premium satova
+              Explore our exclusive collection of premium watches
             </p>
             <a href="/#contact" className={styles.ctaButton}>
-              <span>Pogledajte Kolekciju</span>
+              <span>View Collection</span>
               <span className={styles.ctaArrow}>→</span>
             </a>
           </div>

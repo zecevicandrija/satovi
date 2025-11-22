@@ -93,17 +93,17 @@ export default function Contact() {
           <div className={styles.contactInfo} ref={infoRef}>
             <div className={styles.badge}>
               <span className={styles.badgeIcon}>💬</span>
-              <span>Pošaljite Poruku</span>
+              <span>Send a Message</span>
             </div>
 
             <h2 className={styles.sectionTitle}>
-              Kontaktirajte
-              <span className={styles.titleGold}>‎ Nas</span>
+              Contact
+              <span className={styles.titleGold}>‎ Us</span>
             </h2>
             
             <p className={styles.contactText}>
-              Imate pitanja o našim satovima? Želite savet pri izboru? 
-              Naš tim je tu da vam pomogne. Odgovaramo u roku od 24 sata.
+              Have questions about our watches? Need advice choosing? 
+              Our team is here to help. We respond within 24 hours.
             </p>
 
             {/* Contact Details */}
@@ -130,7 +130,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div className={styles.contactContent}>
-                  <span className={styles.contactLabel}>Telefon</span>
+                  <span className={styles.contactLabel}>Phone</span>
                   <a href="tel:+381XXXXXXXXX" className={styles.contactValue}>
                     +381 XX XXX XXXX
                   </a>
@@ -145,9 +145,9 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div className={styles.contactContent}>
-                  <span className={styles.contactLabel}>Radno Vreme</span>
-                  <span className={styles.contactValue}>Pon-Pet: 9:00 - 18:00</span>
-                  <span className={styles.contactValue}>Sub: 10:00 - 14:00</span>
+                  <span className={styles.contactLabel}>Working Hours</span>
+                  <span className={styles.contactValue}>Mon-Fri: 9:00 AM - 6:00 PM</span>
+                  <span className={styles.contactValue}>Sat: 10:00 AM - 2:00 PM</span>
                 </div>
               </div> */}
 
@@ -159,15 +159,15 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div className={styles.contactContent}>
-                  <span className={styles.contactLabel}>Adresa</span>
-                  <span className={styles.contactValue}>Beograd, Srbija</span>
+                  <span className={styles.contactLabel}>Address</span>
+                  <span className={styles.contactValue}>Belgrade, Serbia</span>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
             <div className={styles.socialSection}>
-              <p className={styles.socialLabel}>Pratite Nas</p>
+              <p className={styles.socialLabel}>Follow Us</p>
               <div className={styles.socialLinks}>
                 <a href="#" className={styles.socialLink}>
                   <svg viewBox="0 0 24 24" fill="currentColor">
@@ -191,15 +191,15 @@ export default function Contact() {
           {/* Right Side - Form */}
           <div className={styles.contactFormWrapper} ref={formRef}>
             <div className={styles.formHeader}>
-              <h3 className={styles.formTitle}>Pošaljite nam poruku</h3>
-              <p className={styles.formSubtitle}>Popunite formular i odgovorićemo Vam uskoro</p>
+              <h3 className={styles.formTitle}>Send us a message</h3>
+              <p className={styles.formSubtitle}>Fill out the form and we'll get back to you soon</p>
             </div>
 
             <form onSubmit={handleSubmit} className={styles.contactForm}>
               {/* Name */}
               <div className={`${styles.inputGroup} ${focusedField === 'name' ? styles.focused : ''}`}>
                 <label htmlFor="name" className={styles.label}>
-                  Ime i Prezime *
+                  Full Name *
                 </label>
                 <div className={styles.inputWrapper}>
                   <span className={styles.inputIcon}>👤</span>
@@ -207,7 +207,7 @@ export default function Contact() {
                     id="name"
                     type="text"
                     className={styles.input}
-                    placeholder="Npr. Marko Marković"
+                    placeholder="E.g. John Smith"
                     value={formData.name}
                     onChange={(e) => handleChange('name', e.target.value)}
                     onFocus={() => setFocusedField('name')}
@@ -221,7 +221,7 @@ export default function Contact() {
               <div className={styles.inputRow}>
                 <div className={`${styles.inputGroup} ${focusedField === 'email' ? styles.focused : ''}`}>
                   <label htmlFor="email" className={styles.label}>
-                    Email Adresa *
+                    Email Address *
                   </label>
                   <div className={styles.inputWrapper}>
                     <span className={styles.inputIcon}>📧</span>
@@ -229,7 +229,7 @@ export default function Contact() {
                       id="email"
                       type="email"
                       className={styles.input}
-                      placeholder="vas.email@example.com"
+                      placeholder="your.email@example.com"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
                       onFocus={() => setFocusedField('email')}
@@ -241,7 +241,7 @@ export default function Contact() {
 
                 <div className={`${styles.inputGroup} ${focusedField === 'phone' ? styles.focused : ''}`}>
                   <label htmlFor="phone" className={styles.label}>
-                    Telefon (opciono)
+                    Phone (optional)
                   </label>
                   <div className={styles.inputWrapper}>
                     <span className={styles.inputIcon}>📱</span>
@@ -262,7 +262,7 @@ export default function Contact() {
               {/* Subject */}
               <div className={`${styles.inputGroup} ${focusedField === 'subject' ? styles.focused : ''}`}>
                 <label htmlFor="subject" className={styles.label}>
-                  Tema *
+                  Subject *
                 </label>
                 <div className={styles.inputWrapper}>
                   <span className={styles.inputIcon}>📋</span>
@@ -275,12 +275,12 @@ export default function Contact() {
                     onBlur={() => setFocusedField(null)}
                     required
                   >
-                    <option value="">Izaberite temu...</option>
-                    <option value="product">Pitanja o proizvodu</option>
-                    <option value="order">Status porudžbine</option>
-                    <option value="support">Tehnička podrška</option>
-                    <option value="partnership">Saradnja</option>
-                    <option value="other">Ostalo</option>
+                    <option value="">Choose a subject...</option>
+                    <option value="product">Product Questions</option>
+                    <option value="order">Order Status</option>
+                    <option value="support">Technical Support</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
               </div>
@@ -288,13 +288,13 @@ export default function Contact() {
               {/* Message */}
               <div className={`${styles.inputGroup} ${focusedField === 'message' ? styles.focused : ''}`}>
                 <label htmlFor="message" className={styles.label}>
-                  Vaša Poruka *
+                  Your Message *
                 </label>
                 <div className={styles.inputWrapper}>
                   <textarea
                     id="message"
                     className={styles.textarea}
-                    placeholder="Opišite kako možemo da Vam pomognemo..."
+                    placeholder="Describe how we can help you..."
                     rows="5"
                     value={formData.message}
                     onChange={(e) => handleChange('message', e.target.value)}
@@ -314,16 +314,16 @@ export default function Contact() {
                 {isSubmitting ? (
                   <>
                     <span className={styles.spinner}></span>
-                    <span>Šalje se...</span>
+                    <span>Sending...</span>
                   </>
                 ) : submitStatus === 'success' ? (
                   <>
                     <span className={styles.checkmark}>✓</span>
-                    <span>Poslato!</span>
+                    <span>Sent!</span>
                   </>
                 ) : (
                   <>
-                    <span>Pošaljite Poruku</span>
+                    <span>Send Message</span>
                     <span className={styles.btnArrow}>→</span>
                   </>
                 )}
@@ -334,8 +334,8 @@ export default function Contact() {
                 <div className={styles.successMessage}>
                   <span className={styles.successIcon}>✓</span>
                   <div>
-                    <strong>Uspešno poslato!</strong>
-                    <p>Odgovorićemo Vam u najkraćem roku.</p>
+                    <strong>Successfully sent!</strong>
+                    <p>We'll get back to you shortly.</p>
                   </div>
                 </div>
               )}
@@ -344,8 +344,8 @@ export default function Contact() {
                 <div className={styles.errorMessage}>
                   <span className={styles.errorIcon}>⚠</span>
                   <div>
-                    <strong>Greška!</strong>
-                    <p>Molimo proverite unete podatke.</p>
+                    <strong>Error!</strong>
+                    <p>Please check the information entered.</p>
                   </div>
                 </div>
               )}

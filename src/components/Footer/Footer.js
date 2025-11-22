@@ -34,17 +34,17 @@ export default function Footer() {
           <div className={styles.newsletterContent}>
             <div className={styles.newsletterText}>
               <h3 className={styles.newsletterTitle}>
-                Prijavite se za Newsletter
+                Subscribe to Newsletter
               </h3>
               <p className={styles.newsletterSubtitle}>
-                Ekskluzivne ponude i najnovije vesti direktno u Vaš inbox
+                Exclusive offers and latest news directly to your inbox
               </p>
             </div>
             <form onSubmit={handleSubscribe} className={styles.newsletterForm}>
               <div className={styles.newsletterInputWrapper}>
                 <input
                   type="email"
-                  placeholder="vas.email@example.com"
+                  placeholder="your.email@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className={styles.newsletterInput}
@@ -58,11 +58,11 @@ export default function Footer() {
                   {isSubscribed ? (
                     <>
                       <span className={styles.checkmark}>✓</span>
-                      <span>Prijavljeni!</span>
+                      <span>Subscribed!</span>
                     </>
                   ) : (
                     <>
-                      <span>Prijavite se</span>
+                      <span>Subscribe</span>
                       <span className={styles.btnArrow}>→</span>
                     </>
                   )}
@@ -81,7 +81,7 @@ export default function Footer() {
               <span className={styles.logoText}>CHRONOS</span>
             </div>
             <p className={styles.brandTagline}>
-              Gde vreme postaje umetnost. Premium satovi koji pričaju priču o vašem stilu.
+              Where time becomes art. Premium watches that tell the story of your style.
             </p>
             <div className={styles.socialLinks}>
               <a href="#" className={styles.socialLink} aria-label="Facebook">
@@ -109,45 +109,45 @@ export default function Footer() {
 
           {/* Shop Links */}
           <div className={styles.footerColumn}>
-            <h4 className={styles.columnTitle}>Prodavnica</h4>
+            <h4 className={styles.columnTitle}>Shop</h4>
             <ul className={styles.columnLinks}>
-              <li><a href="#home">Početna</a></li>
-              <li><a href="#collection">Kolekcija</a></li>
-              <li><a href="#features">Karakteristike</a></li>
-              <li><a href="#contact">Kontakt</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#collection">Collection</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
           {/* Support Links */}
           <div className={styles.footerColumn}>
-            <h4 className={styles.columnTitle}>Podrška</h4>
+            <h4 className={styles.columnTitle}>Support</h4>
             <ul className={styles.columnLinks}>
-              <li><a href="#">Pitanja i Odgovori</a></li>
-              <li><a href="#">Dostava</a></li>
-              <li><a href="#">Povraćaj</a></li>
-              <li><a href="#">Garancija</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Warranty</a></li>
             </ul>
           </div>
 
           {/* Legal Links */}
           <div className={styles.footerColumn}>
-            <h4 className={styles.columnTitle}>Informacije</h4>
+            <h4 className={styles.columnTitle}>Information</h4>
             <ul className={styles.columnLinks}>
-              <li><a href="#">O Nama</a></li>
-              <li><a href="#">Uslovi Korišćenja</a></li>
-              <li><a href="#">Politika Privatnosti</a></li>
-              <li><a href="#">Cookie Politika</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
 
         {/* Payment Methods */}
         <div className={styles.paymentSection}>
-          <p className={styles.paymentLabel}>Prihvatamo</p>
+          <p className={styles.paymentLabel}>We Accept</p>
           <div className={styles.paymentMethods}>
             <div className={styles.paymentIcon}>💳 Visa</div>
             <div className={styles.paymentIcon}>💳 Mastercard</div>
-            <div className={styles.paymentIcon}>💰 Pouzećem</div>
+            <div className={styles.paymentIcon}>💰 Cash on Delivery</div>
             <div className={styles.paymentIcon}>💳 PayPal</div>
           </div>
         </div>
@@ -156,13 +156,13 @@ export default function Footer() {
         <div className={styles.footerBottom}>
           <div className={styles.bottomContent}>
             <p className={styles.copyright}>
-              &copy; 2025 CHRONOS. Sva prava zadržana.
+              &copy; 2025 CHRONOS. All rights reserved.
             </p>
             <button onClick={scrollToTop} className={styles.backToTop}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 15l-6-6-6 6"/>
               </svg>
-              <span>Nazad na vrh</span>
+              <span>Back to top</span>
             </button>
           </div>
         </div>

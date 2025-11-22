@@ -8,10 +8,10 @@ const watches = [
     id: 1,
     color: 'black',
     title: 'Midnight Elegance',
-    subtitle: 'Noćna Elegancija',
-    description: 'Za one koji vole klasiku',
-    price: '89.990',
-    oldPrice: '129.990',
+    subtitle: 'Night Elegance',
+    description: 'For those who love classics',
+    price: '799',
+    oldPrice: '999',
     discount: '31%',
     circleColor: '#1a1a1a',
     strokeColor: '#333',
@@ -19,43 +19,43 @@ const watches = [
     image: '/Assets/sat1.jpg',
     badge: 'Best Seller',
     badgeType: 'bestseller',
-    stock: 'U stoku',
+    stock: 'In Stock',
     rating: 4.9,
     reviews: 127,
-    features: ['Safirno staklo', '50m vodootpornost', 'Automatski mehanizam'],
-    materials: ['Nehrđajući čelik', 'Kožna narukvica', 'Swiss movement']
+    features: ['Sapphire Crystal', '50m Water Resistant', 'Automatic Movement'],
+    materials: ['Stainless Steel', 'Leather Strap', 'Swiss Movement']
   },
   {
     id: 2,
     color: 'silver',
     title: 'Sterling Prestige',
-    subtitle: 'Srebrna Elegancija',
-    description: 'Moderna sofisticiranost',
+    subtitle: 'Silver Elegance',
+    description: 'Modern sophistication',
     featured: true,
-    price: '99.990',
-    oldPrice: '149.990',
+    price: '999',
+    oldPrice: '1299',
     discount: '33%',
     circleColor: '#c0c0c0',
     strokeColor: '#a8a8a8',
     handColor: '#333',
     image: '/Assets/sat2.jpg',
-    badge: 'Najpopularniji',
+    badge: 'Most Popular',
     badgeType: 'popular',
-    stock: 'Samo 3 preostala',
+    stock: 'Only 3 Left',
     stockUrgent: true,
     rating: 5.0,
     reviews: 243,
-    features: ['Anti-refleks', '100m vodootpornost', 'Hronograf'],
-    materials: ['316L čelik', 'Milanesi narukvica', 'Precision quartz']
+    features: ['Anti-Reflective', '100m Water Resistant', 'Chronograph'],
+    materials: ['316L Steel', 'Milanese Strap', 'Precision Quartz']
   },
   {
     id: 3,
     color: 'gold',
     title: 'Royal Excellence',
-    subtitle: 'Kraljevsko Zlato',
-    description: 'Luksuz koji traje',
-    price: '119.990',
-    oldPrice: '179.990',
+    subtitle: 'Royal Gold',
+    description: 'Luxury that lasts',
+    price: '699',
+    oldPrice: '799',
     discount: '33%',
     circleColor: '#d4af37',
     strokeColor: '#b8941f',
@@ -63,32 +63,32 @@ const watches = [
     image: '/Assets/sat3.jpg',
     badge: 'Premium',
     badgeType: 'premium',
-    stock: 'Limitirana serija',
+    stock: 'Limited Edition',
     rating: 4.8,
     reviews: 89,
-    features: ['18K pozlata', '30m vodootpornost', 'Ručna izrada'],
-    materials: ['Pozlaćeni čelik', 'Premium koža', 'Japanese movement']
+    features: ['18K Gold Plated', '30m Water Resistant', 'Handcrafted'],
+    materials: ['Gold-Plated Steel', 'Premium Leather', 'Japanese Movement']
   },
   {
     id: 4,
     color: 'blue',
     title: 'Ocean Dynasty',
-    subtitle: 'Okean Dubine',
-    description: 'Dubok i misteriozans',
-    price: '94.990',
-    oldPrice: '139.990',
+    subtitle: 'Ocean Depths',
+    description: 'Deep and mysterious',
+    price: '599',
+    oldPrice: '649',
     discount: '32%',
     circleColor: '#1e3a5f',
     strokeColor: '#2c5282',
     handColor: '#c0c0c0',
     image: '/Assets/sat4.jpg',
-    badge: 'Novo',
+    badge: 'New',
     badgeType: 'new',
-    stock: 'U stoku',
+    stock: 'In Stock',
     rating: 4.7,
     reviews: 156,
-    features: ['Plavi safir', '200m vodootpornost', 'Svetleće kazaljke'],
-    materials: ['Titanijum', 'Gumena narukvica', 'Dive watch certified']
+    features: ['Blue Sapphire', '200m Water Resistant', 'Luminous Hands'],
+    materials: ['Titanium', 'Rubber Strap', 'Dive Watch Certified']
   }
 ]
 
@@ -234,30 +234,30 @@ export default function Collection() {
         <div className={styles.sectionHeader}>
           <span className={styles.sectionLabel}>
             <span className={styles.labelIcon}>✦</span>
-            Premium Kolekcija
+            Premium Collection
             <span className={styles.labelIcon}>✦</span>
           </span>
           <h2 className={styles.sectionTitle}>
-            Izaberite Vaš
-            <span className={styles.titleHighlight}>‎ Stil</span>
+            Choose Your
+            <span className={styles.titleHighlight}>‎ Style</span>
           </h2>
           <p className={styles.sectionSubtitle}>
-            Svaki sat je remek-delo. Različite boje, ista savršenost.
+            Every watch is a masterpiece. Different colors, same perfection.
           </p>
           
           {/* Trust Bar */}
           <div className={styles.trustBar}>
             <div className={styles.trustItem}>
               <span className={styles.trustIcon}>✓</span>
-              <span>Besplatna Dostava</span>
+              <span>Free Shipping</span>
             </div>
             <div className={styles.trustItem}>
               <span className={styles.trustIcon}>✓</span>
-              <span>2 God. Garancija</span>
+              <span>2 Year Warranty</span>
             </div>
             <div className={styles.trustItem}>
               <span className={styles.trustIcon}>✓</span>
-              <span>30 Dana Vraćanje</span>
+              <span>30 Day Returns</span>
             </div>
           </div>
         </div>
@@ -321,7 +321,7 @@ export default function Collection() {
               {viewingCount[watch.id] && (
                 <div className={styles.liveViewers}>
                   <span className={styles.viewerDot}></span>
-                  <span>{viewingCount[watch.id]} ljudi gleda</span>
+                  <span>{viewingCount[watch.id]} people watching</span>
                 </div>
               )}
               
@@ -362,7 +362,7 @@ export default function Collection() {
                   onClick={(e) => openQuickView(watch, e)}
                 >
                   <span>👁</span>
-                  <span>Brzi Pregled</span>
+                  <span>Quick View</span>
                 </button>
 
                 {/* Specs Preview on Hover */}
@@ -403,14 +403,14 @@ export default function Collection() {
                   <button 
                     className={`${styles.arrowBtn} ${styles.arrowLeft}`}
                     onClick={(e) => showPrevious(watch.id, e)}
-                    aria-label="Prethodni prikaz"
+                    aria-label="Previous view"
                   >
                     ‹
                   </button>
                   <button 
                     className={`${styles.arrowBtn} ${styles.arrowRight}`}
                     onClick={(e) => showNext(watch.id, e)}
-                    aria-label="Sledeći prikaz"
+                    aria-label="Next view"
                   >
                     ›
                   </button>
@@ -438,21 +438,21 @@ export default function Collection() {
                     ))}
                   </div>
                   <span className={styles.ratingText}>
-                    {watch.rating} ({watch.reviews} recenzija)
+                    {watch.rating} ({watch.reviews} reviews)
                   </span>
                 </div>
 
                 {/* Price */}
                 <div className={styles.priceSection}>
                   <div className={styles.priceMain}>
-                    <span className={styles.price}>{watch.price} RSD</span>
+                    <span className={styles.price}>$ {watch.price}</span>
                     {watch.oldPrice && (
-                      <span className={styles.oldPrice}>{watch.oldPrice} RSD</span>
+                      <span className={styles.oldPrice}>${watch.oldPrice}</span>
                     )}
                   </div>
                   {watch.discount && (
                     <span className={styles.savings}>
-                      Ušteda: {parseInt(watch.oldPrice.replace('.', '')) - parseInt(watch.price.replace('.', ''))} RSD
+                      Save: ${parseInt(watch.oldPrice.replace('.', '')) - parseInt(watch.price.replace('.', ''))}
                     </span>
                   )}
                 </div>
@@ -479,7 +479,7 @@ export default function Collection() {
                     {selectedWatch === watch.id ? '✓' : '🛒'}
                   </span>
                   <span className={styles.btnText}>
-                    {selectedWatch === watch.id ? 'Dodato u Korpu' : 'Dodaj u Korpu'}
+                    {selectedWatch === watch.id ? 'Added to Cart' : 'Add to Cart'}
                   </span>
                   <span className={styles.btnShine}></span>
                 </button>
@@ -490,9 +490,9 @@ export default function Collection() {
 
         {/* Bottom CTA */}
         <div className={styles.bottomCta}>
-          <p className={styles.ctaText}>Niste sigurni koji sat je za vas?</p>
+          <p className={styles.ctaText}>Not sure which watch is for you?</p>
           <button className={styles.ctaButton}>
-            <span>Kontaktirajte Nas</span>
+            <span>Contact Us</span>
             <span className={styles.ctaArrow}>→</span>
           </button>
         </div>
@@ -519,11 +519,11 @@ export default function Collection() {
                   <span>{quickView.rating} ({quickView.reviews})</span>
                 </div>
                 <div className={styles.modalPrice}>
-                  <span className={styles.price}>{quickView.price} RSD</span>
-                  {quickView.oldPrice && <span className={styles.oldPrice}>{quickView.oldPrice} RSD</span>}
+                  <span className={styles.price}>{quickView.price} $</span>
+                  {quickView.oldPrice && <span className={styles.oldPrice}>{quickView.oldPrice} $</span>}
                 </div>
                 <div className={styles.modalFeatures}>
-                  <h4>Karakteristike:</h4>
+                  <h4>Features:</h4>
                   <ul>
                     {quickView.features.map((feature, idx) => (
                       <li key={idx}>{feature}</li>
@@ -531,7 +531,7 @@ export default function Collection() {
                   </ul>
                 </div>
                 <div className={styles.modalMaterials}>
-                  <h4>Materijali:</h4>
+                  <h4>Materials:</h4>
                   <ul>
                     {quickView.materials.map((material, idx) => (
                       <li key={idx}>{material}</li>
@@ -539,7 +539,7 @@ export default function Collection() {
                   </ul>
                 </div>
                 <button className={styles.modalCtaBtn} onClick={(e) => handleAddToCart(quickView, e)}>
-                  Dodaj u Korpu
+                  Add to Cart
                 </button>
               </div>
             </div>

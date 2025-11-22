@@ -76,40 +76,40 @@ export default function CTA() {
           {/* Premium Badge */}
           <div className={styles.premiumBadge}>
             <span className={styles.badgeIcon}>⭐</span>
-            <span>Ekskluzivna Ponuda</span>
+            <span>Exclusive Offer</span>
             <span className={styles.badgeIcon}>⭐</span>
           </div>
 
           {/* Main Title */}
           <h2 className={styles.ctaTitle}>
-            Ne Čekajte,
-            <span className={styles.titleGold}> Vreme Je Sada</span>
+            Don't Wait,
+            <span className={styles.titleGold}> The Time Is Now</span>
           </h2>
           
           <p className={styles.ctaSubtitle}>
-            Osvojite savršen sat koji će vas pratiti decenijama. 
-            Limitirana ponuda sa besplatnom dostavom i produženom garancijom.
+            Get the perfect watch that will accompany you for decades. 
+            Limited offer with free shipping and extended warranty.
           </p>
 
           {/* Countdown Timer */}
           <div className={styles.urgencyBox}>
             <div className={styles.urgencyLabel}>
-              🔥 Ponuda ističe za:
+              🔥 Offer expires in:
             </div>
             <div className={styles.countdown}>
               <div className={styles.timeBox}>
                 <span className={styles.timeNumber}>{String(timeLeft.hours).padStart(2, '0')}</span>
-                <span className={styles.timeLabel}>Sati</span>
+                <span className={styles.timeLabel}>Hours</span>
               </div>
               <span className={styles.timeSeparator}>:</span>
               <div className={styles.timeBox}>
                 <span className={styles.timeNumber}>{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <span className={styles.timeLabel}>Minuta</span>
+                <span className={styles.timeLabel}>Minutes</span>
               </div>
               <span className={styles.timeSeparator}>:</span>
               <div className={styles.timeBox}>
                 <span className={styles.timeNumber}>{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <span className={styles.timeLabel}>Sekundi</span>
+                <span className={styles.timeLabel}>Seconds</span>
               </div>
             </div>
           </div>
@@ -118,13 +118,13 @@ export default function CTA() {
           <div className={styles.ctaButtons}>
             <a href="#collection" className={styles.btnPrimary}>
               <span className={styles.btnIcon}>🛒</span>
-              <span className={styles.btnText}>Poručite Odmah</span>
+              <span className={styles.btnText}>Order Now</span>
               <span className={styles.btnArrow}>→</span>
               <span className={styles.btnShine}></span>
             </a>
             <a href="#features" className={styles.btnSecondary}>
               <span className={styles.btnIcon}>💬</span>
-              <span>Kontaktirajte Nas</span>
+              <span>Contact Us</span>
             </a>
           </div>
 
@@ -138,8 +138,8 @@ export default function CTA() {
                 </svg>
               </div>
               <div className={styles.trustText}>
-                <strong>100% Sigurna Kupovina</strong>
-                <span>SSL Enkripcija</span>
+                <strong>100% Secure Purchase</strong>
+                <span>SSL Encryption</span>
               </div>
             </div>
             
@@ -153,8 +153,8 @@ export default function CTA() {
                 </svg>
               </div>
               <div className={styles.trustText}>
-                <strong>Besplatna Dostava</strong>
-                <span>2-3 Radna Dana</span>
+                <strong>Free Shipping</strong>
+                <span>2-3 Business Days</span>
               </div>
             </div>
             
@@ -166,8 +166,8 @@ export default function CTA() {
                 </svg>
               </div>
               <div className={styles.trustText}>
-                <strong>30 Dana Vraćanje</strong>
-                <span>Bez Pitanja</span>
+                <strong>30 Day Returns</strong>
+                <span>No Questions Asked</span>
               </div>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default function CTA() {
               <div className={styles.avatarMore}>+500</div>
             </div>
             <div className={styles.proofText}>
-              <strong>2,500+ zadovoljnih kupaca</strong> ove nedelje
+              <strong>2,500+ satisfied customers</strong> this week
               <div className={styles.stars}>
                 {[...Array(5)].map((_, i) => (
                   <span key={i}>⭐</span>
@@ -196,7 +196,7 @@ export default function CTA() {
           <div className={styles.bonusOffer}>
             <span className={styles.bonusIcon}>🎁</span>
             <span className={styles.bonusText}>
-              <strong>BONUS:</strong> Premium kutija i 2 godine produžene garancije za prve kupce!
+              <strong>BONUS:</strong> Premium box and 2 years extended warranty for first customers!
             </span>
           </div>
         </div>
